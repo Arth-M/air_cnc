@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_12_125622) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_12_160258) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,11 +20,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_12_125622) do
     t.float "payment_amount"
     t.bigint "flat_id", null: false
     t.bigint "user_id", null: false
-    t.bigint "flat_review_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["flat_id"], name: "index_bookings_on_flat_id"
-    t.index ["flat_review_id"], name: "index_bookings_on_flat_review_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -33,6 +31,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_12_125622) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "booking_id"
+    t.index ["booking_id"], name: "index_flat_reviews_on_booking_id"
   end
 
   create_table "flats", force: :cascade do |t|
@@ -69,9 +69,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_12_125622) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "bookings", "flat_reviews"
   add_foreign_key "bookings", "flats"
   add_foreign_key "bookings", "users"
+  add_foreign_key "flat_reviews", "bookings"
   add_foreign_key "flats", "users"
   add_foreign_key "user_reviews", "users"
 end
