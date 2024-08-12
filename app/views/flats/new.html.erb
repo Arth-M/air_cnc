@@ -1,0 +1,16 @@
+<h1>Flats#new</h1>
+<p>Find me in app/views/flats/new.html.erb</p>
+
+
+<%= simple_form_for @flat do |f| %>
+  <%= f.input :name %>
+  <%= f.input :street %>
+  <%= f.input :zipcode %>
+  <%= f.input :city %>
+  <%= f.input :full_address %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :mean_rating %>
+  <%= f.input :photo %>
+  <%= f.button :submit, class: "btn btn-primary"%>
+<% end %>
