@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'user_reviews/new'
+  get 'user_reviews/create'
+  get 'user_reviews/edit'
+  get 'user_reviews/update'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
