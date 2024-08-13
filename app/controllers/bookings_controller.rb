@@ -4,13 +4,13 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Bookind.new
+    @booking = Booking.new
   end
 
   def create
-    @booking = Bookind.new(params_booking)
+    @booking = Booking.new(params_booking)
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to root_path(@booking)
     else
       render :new
     end
