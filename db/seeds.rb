@@ -115,39 +115,28 @@ flats = Flat.all
 
 random = rand(1..15)
 random_flat = flats[random]
-booking1 = Booking.create(
-  start_date: Faker::Date.in_date_period,
-  end_date: Faker::Date.in_date_period,
-  payment_amount: random_flat.price,
+booking1 = Booking.create!(
   flat_id: random_flat.id,
   user_id: random_flat.user_id
 )
 
-
 random = rand(1..15)
 random_flat = flats[random]
-booking2 = Booking.create(
-  start_date: Faker::Date.in_date_period,
-  end_date: Faker::Date.in_date_period,
-  payment_amount: random_flat.price,
+booking2 = Booking.create!(
   flat_id: random_flat.id,
   user_id: random_flat.user_id
 )
 
-
 random = rand(1..15)
 random_flat = flats[random]
-booking3 = Booking.create(
-  start_date: Faker::Date.in_date_period,
-  end_date: Faker::Date.in_date_period,
-  payment_amount: random_flat.price,
+booking3 = Booking.create!(
   flat_id: random_flat.id,
   user_id: random_flat.user_id
 )
 puts 'created bookings'
 
 puts 'creating flat_reviews'
-FlatReview.create(
+FlatReview.create!(
   comment: Faker::Quote.famous_last_words,
   rating: rand(1..5),
   booking_id: booking1.id
@@ -155,7 +144,7 @@ FlatReview.create(
 puts 'created flat_reviews'
 
 puts 'creating flat_reviews'
-FlatReview.create(
+FlatReview.create!(
   comment: Faker::Quote.famous_last_words,
   rating: rand(1..5),
   booking_id: booking2.id
@@ -163,7 +152,7 @@ FlatReview.create(
 puts 'created flat_reviews'
 
 puts 'creating flat_reviews'
-FlatReview.create(
+FlatReview.create!(
   comment: Faker::Quote.famous_last_words,
   rating: rand(1..5),
   booking_id: booking3.id
@@ -172,5 +161,19 @@ puts 'created flat_reviews'
 
 
 puts 'creating user_reviews'
-
+UserReview.create!(
+  comment: Faker::Quote.famous_last_words,
+  rating: rand(1..5),
+  user_id: user1.id
+)
+UserReview.create!(
+  comment: Faker::Quote.famous_last_words,
+  rating: rand(1..5),
+  user_id: user2.id
+)
+UserReview.create!(
+  comment: Faker::Quote.famous_last_words,
+  rating: rand(1..5),
+  user_id: user3.id
+)
 puts 'user_reviews created'
