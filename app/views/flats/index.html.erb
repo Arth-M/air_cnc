@@ -1,6 +1,7 @@
 <h1>Flats#index</h1>
 <p>Find me in app/views/flats/index.html.erb</p>
-
+<p>Display</p>
+<%= link_to "New", new_flat_path %><br>
 <% @flats.each do |flat| %>
   <%= link_to flat.name, flat_path(flat) %><br>
   <%= flat.street %><br>
@@ -10,5 +11,5 @@
   <%= flat.description %><br>
   <%= flat.price %><br>
   <%= flat.mean_rating %><br>
-  <%= flat.photos %><br><br><br>
+  <br><br><br>
 <% end %>

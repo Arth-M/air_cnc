@@ -68,11 +68,12 @@ puts 'renters created'
 
 puts 'creating flats'
 users = User.all
-name = Faker::House.room
-city = Faker::Address.city
-zipcode = Faker::Address.zip_code
-street = Faker::Address.street_address
+
 5.times do
+  name = Faker::House.room
+  city = Faker::Address.city
+  zipcode = Faker::Address.zip_code
+  street = Faker::Address.street_address
   Flat.create!(
     name: "Flat with a beautiful #{name}",
     city: city,
@@ -85,6 +86,10 @@ street = Faker::Address.street_address
   )
 end
 5.times do
+  name = Faker::House.room
+  city = Faker::Address.city
+  zipcode = Faker::Address.zip_code
+  street = Faker::Address.street_address
   Flat.create!(
     name: "Flat with a beautiful #{name}",
     city: city,
@@ -97,6 +102,10 @@ end
   )
 end
 5.times do
+  name = Faker::House.room
+  city = Faker::Address.city
+  zipcode = Faker::Address.zip_code
+  street = Faker::Address.street_address
   Flat.create!(
     name: "Flat with a beautiful #{name}",
     city: city,

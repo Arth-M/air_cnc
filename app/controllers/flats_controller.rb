@@ -2,7 +2,9 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: %i[show edit update destroy]
 
   def index
-    @flats = Flat.all
+    @orderby = 'id'
+    @order = 'ASC'
+    @flats = Flat.all.order("#{@orderby} #{@order}")
   end
 
   def show
@@ -20,6 +22,7 @@ class FlatsController < ApplicationController
 
   def create
     @flat = Flat.new(params_flat)
+    @flat.user_id = current_user.id
     if @flat.save
       redirect_to flat_path(@flat)
     else
