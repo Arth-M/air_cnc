@@ -1,6 +1,7 @@
 class UserReviewsController < ApplicationController
   before_action :set_user_review, only: [:edit, :update]
   def new
+    @user_id = User.find(params[:user_id])
     @user_review = UserReview.new
   end
 
