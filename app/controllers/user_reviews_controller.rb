@@ -9,7 +9,7 @@ class UserReviewsController < ApplicationController
     @user_review = UserReview.new(user_review_params)
 
     if @user_review.save!
-      redirect_to _path()
+      redirect_to user_path(@user_id)
     else
       render :new, status: :unprocessable_entity
     end
