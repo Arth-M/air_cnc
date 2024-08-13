@@ -6,8 +6,9 @@ class UserReviewsController < ApplicationController
   end
 
   def create
+    @user_id = User.find(params[:user_id])
     @user_review = UserReview.new(user_review_params)
-
+    @user_review.user_id = @user_id.id
     if @user_review.save!
       redirect_to user_path(@user_id)
     else
@@ -21,7 +22,7 @@ class UserReviewsController < ApplicationController
   def update
     @user_review.update(user_review_params)
     @user_review.save!
-    redirect_to user_booking_path(@user)
+    redirect_to user_review_path
   end
 
   private
