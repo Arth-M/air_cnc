@@ -12,6 +12,11 @@
   <%= @flat.description %><br>
   <%= @flat.price %><br>
   <%= @flat.mean_rating %><br>
+  <% if @flat.photos.attached? %>
+    <% @flat.photos.each do |photo| %>
+    <%= cl_image_tag photo.key  %>
+    <% end %>
+  <% end %>
 
   <%= link_to "Reserver",  new_flat_booking_path(@flat), class: 'btn btn-primary' %>
   <%= link_to "Back to list", flats_path, class: 'btn btn-primary' %><br>
