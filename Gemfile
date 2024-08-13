@@ -75,6 +75,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-########################################
-#new gems
+gem 'faker'
 gem "devise"
+
