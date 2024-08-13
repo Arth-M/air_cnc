@@ -9,9 +9,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :flats do
-    resources :bookings, only: %i[new create show] do
-      resources :flat_reviews, only: %i[new create edit update]
-      resources :user_reviews, only: %i[new create edit update]
+    resources :bookings, only: %i[new create] do
+      resources :user_reviews, only: %i[new create]
     end
   end
+
+  resources :bookings, only: %i[show] do
+    resources :flat_reviews, only: %i[new create]
+  end
+
+  resources :flat_reviews, only: %i[edit update]
+  resources :user_reviews, only: %i[edit update]
+
 end
