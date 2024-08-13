@@ -12,6 +12,10 @@ class FlatsController < ApplicationController
     # if @flat.photos.attached?
     #   @photos = @flat.photo.key
     # end
+    @booking_flat = Flat.find(params[:id]).bookings
+    # @booking_flat.each do |booking_review|
+    #   @review = FlatReview.where(booking_id: booking_review.id)
+    # end
   end
 
   def new
