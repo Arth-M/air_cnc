@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show]
   def show
+    @booking=Booking.find(params[:id])
+    @flat = Flat.find(@booking.flat_id)
   end
 
   def new
@@ -9,8 +11,12 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(params_booking)
-    if @booking.save
-      redirect_to root_path(@booking)
+    # @user=current_user
+    @flat=Flat.find(params[:flat_id])
+    @booking.flat_id=@flat.id
+    @booking.user_id = current_user.id
+    if @booking.save!
+      redirect_to booking_path(@booking)
     else
       render :new
     end
