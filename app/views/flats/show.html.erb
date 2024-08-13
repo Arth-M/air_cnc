@@ -13,4 +13,5 @@
   <%= @flat.price %><br>
   <%= @flat.mean_rating %><br>
 
+  <%= link_to "Reserver",  new_flat_booking_path(@flat), class: 'btn btn-primary' %>
   <%= link_to "Back to list", flats_path, class: 'btn btn-primary' %><br>
