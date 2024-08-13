@@ -12,6 +12,9 @@
   </head>
 
   <body>
+    <% if current_user.first_name==nil && current_user.last_name==nil && current_user.phone_number==nil%>
+    <p class="notice"><%= You should enter your informations %></p>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
