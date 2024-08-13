@@ -1,12 +1,12 @@
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
 
-
+  <%= @flat.name %><br>
   <%= @booking.start_date %><br>
   <%= @booking.end_date %><br>
-  <%= @booking.payment_amount %><br>
-  <%= @booking.flat_id %><br>
-  <%= @booking.user_id %><br>
-  <%= @booking.flat_review_id %><br>
+  <%# <%= @booking.payment_amount %>
+
+  <%# <%= @booking.user_id %>
+  <%#  <%= @booking.flat_review_id %>
 
   <%= link_to "Back to list", flats_path, class: 'btn btn-primary' %><br>
