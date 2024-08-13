@@ -1,0 +1,16 @@
+<h1>Flats#show</h1>
+<p>Find me in app/views/flats/show.html.erb</p>
+
+  <%= link_to "Edit (Tmp)", edit_flat_path(@flat), class: 'btn btn-primary' %><br>
+  <%= button_to "Remove (Tmp)", @flat, method: :delete, class: 'btn btn-primary'  %>
+
+  <%= @flat.name %><br>
+  <%= @flat.street %><br>
+  <%= @flat.zipcode %><br>
+  <%= @flat.city %><br>
+  <%= @flat.full_address %><br>
+  <%= @flat.description %><br>
+  <%= @flat.price %><br>
+  <%= @flat.mean_rating %><br>
+
+  <%= link_to "Back to list", flats_path, class: 'btn btn-primary' %><br>
