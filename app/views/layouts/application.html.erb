@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= render 'components/navbar' %>
     <% if current_user %>
       <% if  current_user.first_name==nil && current_user.last_name==nil && current_user.phone_number==nil%>
       <p class="notice"><%= "You should enter your informations" %></p>
