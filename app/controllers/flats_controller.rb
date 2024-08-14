@@ -6,6 +6,7 @@ class FlatsController < ApplicationController
     @orderby = 'id'
     @order = 'ASC'
     @flats = Flat.all.order("#{@orderby} #{@order}")
+    # @user = current_user
   end
 
   def show

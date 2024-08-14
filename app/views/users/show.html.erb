@@ -1,5 +1,30 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Your Dashboard</h1>
 
-<%= current_user %>
 <%= link_to 'return to home page', flats_path %>
+
+<div class="container my-3">
+  <p>First_name: <%= current_user.first_name %></p>
+  <p>Last_name: <%= current_user.last_name %></p>
+  <p>Phone_number: <%= current_user.phone_number %></p>
+  <p>Email: <%= current_user.email %></p>
+</div>
+
+<div class="container  my-3">
+  <h2>My bookings</h2>
+  <% @bookings.each do |booking| %>
+    <p>start date: <%= booking.start_date %></p>
+    <p>end date: <%= booking.end_date %></p>
+    <%= link_to 'add a Review to this booking', new_booking_flat_review_path(booking) %>
+  <% end %>
+  <h2>My flats</h2>
+  <% @flats.each do |flat| %>
+    <%# si (il a un booking ET que j'ai laissé une review) OU (il n'a pas de booking) %>
+    <p>name: <%= flat.name %></p>
+    <p>Price: <%= flat.price %></p>
+    <p>Full Address: <%= flat.full_address %></p><br><br>
+    <%# Sinon on affiche avec un bouton review %>
+  <%# <%= link_to 'add a Review to the tenant', new_user_user_review_path(flat.user_id) %>
+  <% end %>
+
+</div>
+<%# booking.user_id %>
