@@ -3,6 +3,8 @@ class BookingsController < ApplicationController
   def show
     @booking=Booking.find(params[:id])
     @flat = Flat.find(@booking.flat_id)
+    booked_time =  @booking.end_date.to_time-@booking.start_date.to_time
+    @booked_days = booked_time/(24*60*60)
   end
 
   def new
@@ -15,6 +17,9 @@ class BookingsController < ApplicationController
     @flat=Flat.find(params[:flat_id])
     @booking.flat_id=@flat.id
     @booking.user_id = current_user.id
+    booked_time =  @booking.end_date.to_time-@booking.start_date.to_time
+    @booked_days = booked_time/(24*60*60)
+    @booking.payment_amount = @booked_days * @flat.price
     if @booking.save!
       redirect_to booking_path(@booking)
     else

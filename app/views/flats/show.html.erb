@@ -19,9 +19,9 @@
   <% end %>
 
   <p>Avis sur le logement :</p>
-  <%= if @flat.mean_rating != nil %><br>
-  <%= @flat.mean_rating %><br>
-  <%= end %>
+  <%# <%= if @flat.mean_rating != nil %><br>
+  <%# <%= @flat.mean_rating %><br>
+  <%# <%= end %>
   <% @booking_flat.each do |booking_review| %>
       <%= @review = FlatReview.where(booking_id: booking_review.id).first.comment %>
       <%= @review = FlatReview.where(booking_id: booking_review.id).first.rating %>/5
