@@ -100,6 +100,28 @@ puts 'renters created'
 puts 'creating flats'
 users = User.all
 
+flat0 = Flat.new(
+  name: "Marke Fun on my appartment Benjamin",
+  city: "Paris",
+  zipcode: "75116",
+  street: "12 rue lesueur",
+  full_address: "12 rue lesueur 75116 paris",
+  description: "Modern apartment for the party and beach volley !",
+  price: 150,
+  user_id: user1.id
+)
+
+file1 = URI.open("https://cherry.img.pmdstatic.net/fit/https.3A.2F.2Fimg.2Esport.2Egentside.2Ecom.2Farticle.2Fvolley.2Fequipe-de-volley-nues_731ef0fec20dda38ce03acbe7d6c41a5e6fb04d6.2Ejpg/1200x675/quality/80/thumbnail.jpg")
+flat0.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
+flat0.save!
+
+file2 = URI.open("https://www.shutterstock.com/image-photo/beautiful-young-woman-stands-her-600nw-1456719599.jpg")
+flat0.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
+flat0.save!
+
+file3 = URI.open("https://averagejoes.co.uk/wp-content/uploads/2012/07/teamgb_beach_volley-ball_girls.jpg")
+flat0.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
+flat0.save!
 
 flat1 = Flat.new(
   name: "Urban Jewel",
