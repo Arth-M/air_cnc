@@ -23,10 +23,20 @@ class FlatReviewsController < ApplicationController
   def update
     @flat_review.update(flat_review_params)
     @flat_review.save!
+    average_calculation
     redirect_to booking_path(@flat_review)
   end
 
   private
+
+  def average_calculation
+    @flat_review.flat_id
+    count = FlatReview.where(flat_id: @flat_review.flat_id).count
+    moy = (FlatReview.where(flat_id: @flat_review.flat_id).sum(:rating).to_f / count).round(1)
+    current_flat = Flat.find(@flat_review.flat_id)
+    current_flat.mean_rating = moy
+    current_flat.save
+  end
 
   def set_flat_review
     @flat_review = FlatReview.find(params[:id])

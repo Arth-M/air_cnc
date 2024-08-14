@@ -148,7 +148,8 @@ puts 'creating flat_reviews'
 FlatReview.create!(
   comment: Faker::Quote.famous_last_words,
   rating: rand(1..5),
-  booking_id: booking1.id
+  booking_id: booking1.id,
+  flat_id: 1
 )
 puts 'created flat_reviews'
 
@@ -156,7 +157,8 @@ puts 'creating flat_reviews'
 FlatReview.create!(
   comment: Faker::Quote.famous_last_words,
   rating: rand(1..5),
-  booking_id: booking2.id
+  booking_id: booking2.id,
+  flat_id: 1
 )
 puts 'created flat_reviews'
 
@@ -164,7 +166,8 @@ puts 'creating flat_reviews'
 FlatReview.create!(
   comment: Faker::Quote.famous_last_words,
   rating: rand(1..5),
-  booking_id: booking3.id
+  booking_id: booking3.id,
+  flat_id: 1
 )
 puts 'created flat_reviews'
 
