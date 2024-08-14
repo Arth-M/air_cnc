@@ -1,31 +1,29 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
-
-  <%= link_to "Edit (Tmp)", edit_flat_path(@flat), class: 'btn btn-primary' %><br>
-  <%= button_to "Remove (Tmp)", @flat, method: :delete, class: 'btn btn-primary'  %>
-
-  <%= @flat.name %><br>
-  <%= @flat.street %><br>
-  <%= @flat.zipcode %><br>
-  <%= @flat.city %><br>
-  <%= @flat.full_address %><br>
-  <%= @flat.description %><br>
-  <%= @flat.price %><br>
-  <p>Note moyenne : <%= @flat.mean_rating %></p><br>
-
-  <% if @flat.photos.attached? %>
-    <% @flat.photos.each do |photo| %>
-    <%= cl_image_tag photo.key  %>
-    <% end %>
-  <% end %>
-
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= render partial: 'components/carousel', locals: { photos: @flat.photos } %>
+    </div>
+    <div class="col">
+      <%= @flat.name %><br>
+      <%= @flat.street %><br>
+      <%= @flat.zipcode %><br>
+      <%= @flat.city %><br>
+      <%= @flat.full_address %><br>
+      <%= @flat.description %><br>
+      <%= @flat.price %><br>
+      <p>Note moyenne : <%= @flat.mean_rating %></p><br>
+    </div>
+  </div>
+<div >
+<div>
   <p>Avis sur le logement :</p>
   <% if @reviews %>
     <% @reviews.each do |review| %>
-      <%= review.comment %><br>
-      <%= review.rating %>/5<br><br>
+      <%= render partial: 'components/card_flat_comment', locals: { review: review } %>
     <% end%>
   <% end %>
-
+</div>
   <%= link_to "Reserver",  new_flat_booking_path(@flat), class: 'btn btn-primary' %>
   <%= link_to "Back to list", flats_path, class: 'btn btn-primary' %><br>
+  <%= link_to "Edit (Tmp)", edit_flat_path(@flat), class: 'btn btn-primary' %><br>
+  <%= button_to "Remove (Tmp)", @flat, method: :delete, class: 'btn btn-primary'  %>
