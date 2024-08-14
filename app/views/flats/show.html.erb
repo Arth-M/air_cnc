@@ -11,6 +11,7 @@
   <%= @flat.full_address %><br>
   <%= @flat.description %><br>
   <%= @flat.price %><br>
+  <p>Note moyenne : <%= @flat.mean_rating %></p><br>
 
   <% if @flat.photos.attached? %>
     <% @flat.photos.each do |photo| %>
@@ -19,14 +20,12 @@
   <% end %>
 
   <p>Avis sur le logement :</p>
-  <%# <%= if @flat.mean_rating != nil %><br>
-  <%# <%= @flat.mean_rating %><br>
-  <%# <%= end %>
-  <% @booking_flat.each do |booking_review| %>
-      <%= @review = FlatReview.where(booking_id: booking_review.id).first.comment %>
-      <%= @review = FlatReview.where(booking_id: booking_review.id).first.rating %>/5
-    <% end %> <br> <br>
-
+  <% if @reviews %>
+    <% @reviews.each do |review| %>
+      <%= review.comment %><br>
+      <%= review.rating %>/5<br><br>
+    <% end%>
+  <% end %>
 
   <%= link_to "Reserver",  new_flat_booking_path(@flat), class: 'btn btn-primary' %>
   <%= link_to "Back to list", flats_path, class: 'btn btn-primary' %><br>
