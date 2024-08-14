@@ -1,11 +1,9 @@
 <h1>Bookings#show</h1>
 <p>Find me in app/views/bookings/show.html.erb</p>
 
-  <%= @flat.name %><br>
-  <%= @booking.start_date %><br>
-  <%= @booking.end_date %><br>
-  <%= @booking.payment_amount %><br>
-  <%= @booking.flat_id %><br>
-  <%= @booking.user_id %><br>
+  <p>Congrats <%= current_user %>, you booked <%= @flat.name %></p>
+  <p>Booking from <%= @booking.start_date %> to <%= @booking.end_date %> : <%= @booked_days.round %> days </p><br>
+  <p>Your bill: <%= @booked_days.round %> x <%= @flat.price.round %> = <%= @booking.payment_amount.round %></p>
+
 
   <%= link_to "Back to list", flats_path, class: 'btn btn-primary' %><br>
