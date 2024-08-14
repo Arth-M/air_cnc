@@ -77,4 +77,4 @@ end
 
 gem 'faker'
 gem "devise"
-
+gem 'cloudinary'
