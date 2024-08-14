@@ -1,0 +1,7 @@
+<h1>FlatReviews#edit</h1>
+<p>Find me in app/views/flat_reviews/edit.html.erb</p>
+<%= simple_form_for (@flat_review) do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating, collection: (0..5) %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
