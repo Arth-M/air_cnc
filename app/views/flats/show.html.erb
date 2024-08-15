@@ -26,12 +26,14 @@
   </div>
 <div >
 <div class="row bg-white p-3 mt-4">
-  <h3>Avis sur le logement :</h3>
-  <% if @reviews %>
-    <% @reviews.each do |review| %>
-      <%= render partial: 'components/card_flat_comment', locals: { review: review } %>
-    <% end%>
-  <% end %>
+  <h3>Reviews :</h3>
+  <div class="d-flex flex-wrap justify-content-around">
+    <% if @reviews %>
+      <% @reviews.each do |review| %>
+        <%= render partial: 'components/card_flat_comment', locals: { review: review } %>
+      <% end%>
+    <% end %>
+  </div>
 </div>
   <%= link_to "Back to list", flats_path, class: 'btn btn-flat m-3' %>
 </div>

@@ -1,12 +1,16 @@
-<%# uikit.lewagon.com/documentation#card_product %>
-
-<div class="card-product mt-2">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2><%= review.comment %></h2>
-    <% FlatReview::AUTHORIZED_RATINGS.each do |number| %>
-      <i class="fa<%= (number > review.rating) ? 'r' : 's' %> fa-star"></i>
-    <% end %>
-
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <% FlatReview::AUTHORIZED_RATINGS.each do |number| %>
+          <i class="fa<%= (number > review.rating) ? 'r' : 's' %> fa-star"></i>
+        <% end %>
+        <p class="card-text"><%= review.comment %></p>
+        <p class="card-text"><small class="text-muted"><%= review.created_at.strftime("%d/%m/%Y - %T") %></small></p>
+      </div>
+    </div>
   </div>
 </div>
