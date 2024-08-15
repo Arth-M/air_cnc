@@ -78,8 +78,5 @@ end
 gem 'faker'
 gem "devise"
 gem 'cloudinary'
-<<<<<<< HEAD
 gem "pg_search"
-=======
 gem "geocoder"
->>>>>>> f29c061 (geocoding started)
