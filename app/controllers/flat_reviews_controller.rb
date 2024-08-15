@@ -11,6 +11,7 @@ class FlatReviewsController < ApplicationController
     @flat_review.booking_id = @booking_id.id
 
     if @flat_review.save!
+      average_calculation
       redirect_to user_path(current_user)
     else
       render :new, status: :unprocessable_entity
