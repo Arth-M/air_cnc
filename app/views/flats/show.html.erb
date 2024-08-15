@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col">
+      <h2><%= @flat.name %></h2>
       <%= render partial: 'components/carousel', locals: { photos: @flat.photos } %>
     </div>
     <div class="col">
-      <%= @flat.name %><br>
       <%= @flat.street %><br>
       <%= @flat.zipcode %><br>
       <%= @flat.city %><br>
       <%= @flat.full_address %><br>
       <%= @flat.description %><br>
       <%= @flat.price %><br>
-      <p>Note moyenne : <%= @flat.mean_rating %></p><br>
+      <p>Note moyenne : <%= @mean_rating %></p><br>
     </div>
   </div>
 <div >

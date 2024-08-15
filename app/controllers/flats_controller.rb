@@ -22,6 +22,7 @@ class FlatsController < ApplicationController
     # end
 
     @reviews = FlatReview.where(flat_id: @flat.id)
+    @mean_rating = @flat.flat_reviews.average(:rating).to_f.round(1)
   end
 
   def new
