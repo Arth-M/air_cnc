@@ -1,8 +1,15 @@
 <%= render "components/banner_search" %>
-<div class="container m-5">
-  <div class="cards">
-    <% @flats.each do |flat| %>
-    <%= render "/components/card_flat_vertical", flat: flat %>
-    <% end %>
+  <div class="row d-flex">
+    <div class="cards col-8">
+      <% @flats.each do |flat| %>
+      <%= render "/components/card_flat_vertical", flat: flat %>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <div id="map"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
   </div>
-</div>

@@ -12,4 +12,6 @@ class Flat < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+  geocoded_by :full_address
+  after_validation :geocode
 end

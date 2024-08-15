@@ -13,7 +13,12 @@ class FlatsController < ApplicationController
 
     end
 
-    # @user = current_user
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
