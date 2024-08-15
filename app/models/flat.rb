@@ -4,4 +4,12 @@ class Flat < ApplicationRecord
   has_many :flat_reviews, through: :bookings
 
   has_many_attached :photos
+
+  include PgSearch::Model
+  # multisearchable against: [:title, :synopsis]
+  pg_search_scope :search,
+  against: [ :name, :city, :zipcode, :description ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end
