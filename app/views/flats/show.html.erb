@@ -1,31 +1,38 @@
 <div class="container">
-  <div class="row">
+  <div class="row bg-white p-3">
     <div class="col">
       <h2><%= @flat.name %></h2>
-      <%= render partial: 'components/carousel', locals: { photos: @flat.photos } %>
+      <div class="flat-img">
+        <%= render partial: 'components/carousel', locals: { photos: @flat.photos } %>
+      </div>
     </div>
-    <div class="col">
-      <%= @flat.street %><br>
-      <%= @flat.zipcode %><br>
-      <%= @flat.city %><br>
-      <%= @flat.full_address %><br>
-      <%= @flat.description %><br>
-      <%= @flat.price %><br>
-      <p>Note moyenne : <%= @mean_rating %></p><br>
+    <div class="col description-flat p-5">
+      <p><b>Address : </b><%= @flat.full_address %></p>
+      <p><b>Description : </b><%= @flat.description %></p>
+      <% if @mean_rating.round == 1 %>
+        <p><b>Rating : </b><i class="fa-solid fa-star"></i></p>
+        <% elsif @mean_rating.round == 2 %>
+        <p><b>Rating : </b><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        <% elsif @mean_rating.round == 3 %>
+        <p><b>Rating : </b><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        <% elsif @mean_rating.round == 4 %>
+        <p><b>Rating : </b><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        <% elsif @mean_rating.round == 5 %>
+        <p><b>Rating : </b><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+      <% end %>
+      <p><b>Price : </b><%= @flat.price %> €</p>
+      <%= link_to "Reserver",  new_flat_booking_path(@flat), class: 'btn btn-flat' %>
     </div>
   </div>
 <div >
-<div>
-  <p>Avis sur le logement :</p>
+<div class="row bg-white p-3 mt-4">
+  <h3>Avis sur le logement :</h3>
   <% if @reviews %>
     <% @reviews.each do |review| %>
       <%= render partial: 'components/card_flat_comment', locals: { review: review } %>
     <% end%>
   <% end %>
 </div>
-  <%= link_to "Reserver",  new_flat_booking_path(@flat), class: 'btn btn-primary' %>
-  <%= link_to "Back to list", flats_path, class: 'btn btn-primary' %><br>
-  <%= link_to "Edit (Tmp)", edit_flat_path(@flat), class: 'btn btn-primary' %><br>
-  <%= button_to "Remove (Tmp)", @flat, method: :delete, class: 'btn btn-primary'  %>
+  <%= link_to "Back to list", flats_path, class: 'btn btn-flat m-3' %>
 </div>
 </div>
