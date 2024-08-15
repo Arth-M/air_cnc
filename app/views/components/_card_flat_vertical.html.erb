@@ -1,10 +1,14 @@
 <%# https://getbootstrap.com/docs/5.3/components/card/ %>
 
 
-<div class="card shadow p-3 mb-5 bg-white rounded" >
+<div class="card shadow p-3 mb-5 bg-white" style="width: 18rem; border_radius: $border-radius">
   <div class="card-body">
-    <h5 class="card-title"><%= flat.name %></h5>
-    <p class="card-text" style="background-image.photo.<%=flat.photos.first.url%>" > <%= flat.description %></p>
+    <h5 class="card-title text-center"><%= flat.name %></h5>
+      <% if flat.description.length > 67 %>
+        <p class="card-text" ><%= flat.description[0,64] %>...</p>
+      <% else %>
+        <p class="card-text" ><%= flat.description %></p>
+      <% end %>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"> Price per day: <%= flat.price %></li>
@@ -12,10 +16,14 @@
     <%# <li class="list-group-item"><%= flat.mean_rating %> <%#</li> %>
   </ul>
   <div class="card-body">
-    <%= image_tag flat.photos[0], style: 'height: 110px;width:100%' %>
+    <% if flat.photos[0].nil? %>
+      <%= image_tag 'https://raw.githubusercontent.com/Arth-M/air_cnc/master/public/logo.png', style: 'height: 110px;width:50%' %>
+    <% else %>
+      <%= image_tag flat.photos[0], style: 'height:150px; width:100%' %>
+    <% end %>
     <%# <%= image_tag flat.photos[1], style: 'height:75px;width:75px' %>
     <%# <%= image_tag flat.photos[2], style: 'height:75px;width:75px' %>
-    <%= link_to 'Show me more', flat_path(flat), class: "btn-flat m-2" %>
+    <p class="m-2 text-center"><%= link_to 'Show me more', flat_path(flat), class: "btn-flat m-2" %></p>
   </div>
 </div>
 
