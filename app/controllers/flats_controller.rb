@@ -5,7 +5,15 @@ class FlatsController < ApplicationController
   def index
     @orderby = 'id'
     @order = 'ASC'
-    @flats = Flat.all.order("#{@orderby} #{@order}")
+
+    if params['query'].present?
+      @flats = Flat.search(params['query']).order("#{@orderby} #{@order}")
+    else
+      @flats = Flat.all.order("#{@orderby} #{@order}")
+
+    end
+
+    # @user = current_user
   end
 
   def show
