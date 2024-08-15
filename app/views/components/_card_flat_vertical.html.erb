@@ -1,7 +1,7 @@
 <%# https://getbootstrap.com/docs/5.3/components/card/ %>
 
 
-<div class="card shadow p-3 mb-5 bg-white" style="width: 18rem; border_radius: $border-radius">
+<div class="card shadow p-3 mb-5 bg-white" style="border_radius: $border-radius">
   <div class="card-body">
     <h5 class="card-title text-center"><%= flat.name %></h5>
       <% if flat.description.length > 67 %>
@@ -12,7 +12,7 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"> Price per day: <%= flat.price %></li>
-    <li class="list-group-item"><%= flat.full_address %></li>
+    <li class="list-group-item"><%= flat.city %></li>
     <%# <li class="list-group-item"><%= flat.mean_rating %> <%#</li> %>
   </ul>
   <div class="card-body">
