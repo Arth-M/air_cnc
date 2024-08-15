@@ -1,9 +1,17 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
-
-  <p>Congrats <%= current_user %>, you booked <%= @flat.name %></p>
-  <p>Booking from <%= @booking.start_date %> to <%= @booking.end_date %> : <%= @booked_days.round %> days </p><br>
-  <p>Your bill: <%= @booked_days.round %> x <%= @flat.price.round %> = <%= @booking.payment_amount.round %></p>
+<div class="container">
+  <div class="text-center">
+    <h1>Congrats <%= current_user.first_name %>,</h1>
+    <h3>you booked <%= @flat.name %> !</h3>
+  </div>
+  <div class="d-block w-100 carousel-img">
+    <%= render partial: 'components/carousel', locals: { photos: @flat.photos } %>
+  </div>
+  <div class="description-flat">
+    <p>Booking from <b><%= @booking.start_date %></b> to <b><%= @booking.end_date %></b></p>
+    <p><%= @booked_days.round %> days </p>
+    <p>Your bill: <%= @booked_days.round %> x <%= @flat.price.round %> = <%= @booking.payment_amount.round %></p>
+  </div>
 
 
   <%= link_to "Back to list", flats_path, class: 'btn btn-primary' %><br>
+</div>
