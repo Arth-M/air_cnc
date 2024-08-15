@@ -1,13 +1,13 @@
-<div class="container my-3">
-  <div class="row mb-3">
-    <div class="col-6">
-      <img src= "<%= current_user.photo.url %>" alt="User avatar">
+<div class="user-info-container mt-3">
+  <div class="d-flex justify-content-between shadow p-3 mb-5 bg-white rounded">
+    <div>
       <p>First_name: <%= current_user.first_name %></p>
       <p>Last_name: <%= current_user.last_name %></p>
-    </div>
-    <div class="col-6">
       <p>Phone_number: <%= current_user.phone_number %></p>
       <p>Email: <%= current_user.email %></p>
+    </div>
+    <div class="align-self-baseline">
+      <img src= "<%= current_user.photo.url %>" alt="User avatar" width="500" height="600" class="avatar-dashboard">
     </div>
   </div>
 </div>

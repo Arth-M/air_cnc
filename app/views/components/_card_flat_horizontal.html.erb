@@ -1,15 +1,16 @@
 <%# uikit.lewagon.com/documentation#card_product %>
-<div class="card-product">
+
     <% @flats.each do |flat| %>
       <%= link_to flat_path(flat) do %>
-        <div class="one-card">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-            <h2><%= flat.name %></h2>
-            <p><%= flat.price %> <strong>€</strong> </p>
-            <p><%= flat.full_address %> <strong>€</strong> </p>
+        <div class="card-flat">
+          <div class="one-card">
+            <%= cl_image_tag flat.photos[0].key, :style => "height: 120px" %>
+            <div class="card-product-infos p-1">
+              <h2><%= flat.name %></h2>
+              <p><%= flat.price %> <strong>€</strong> </p>
+              <p><%= flat.full_address %> <strong>€</strong> </p>
+            </div>
           </div>
         </div>
       <% end %>
   <% end %>
-</div>
