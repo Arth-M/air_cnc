@@ -12,6 +12,6 @@ class Flat < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :full_address
+  after_validation :geocode
 end
