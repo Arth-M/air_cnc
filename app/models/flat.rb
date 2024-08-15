@@ -1,7 +1,7 @@
 class Flat < ApplicationRecord
   belongs_to :user
   has_many  :bookings
-  has_many :flat_reviews
+  has_many :flat_reviews, through: :bookings, dependent: :destroy
 
   has_many_attached :photos
 
@@ -12,4 +12,6 @@ class Flat < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+  geocoded_by :full_address
+  after_validation :geocode
 end

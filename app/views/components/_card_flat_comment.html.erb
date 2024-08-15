@@ -4,6 +4,9 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="card-product-infos">
     <h2><%= review.comment %></h2>
-    <p>Note <%= review.rating %><strong>/5</strong></p>
+    <% FlatReview::AUTHORIZED_RATINGS.each do |number| %>
+      <i class="fa<%= (number > review.rating) ? 'r' : 's' %> fa-star"></i>
+    <% end %>
+
   </div>
 </div>
