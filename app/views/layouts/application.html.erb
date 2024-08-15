@@ -9,13 +9,10 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <%= javascript_importmap_tags %>
+    <%= render 'components/navbar' %>
   </head>
 
-  <header>
-    <%= render 'components/navbar' %>
-  </header>
   <body>
-
     <% if current_user %>
       <% if  current_user.first_name==nil && current_user.last_name==nil && current_user.phone_number==nil%>
       <p class="notice"><%= "You should enter your informations" %></p>
@@ -23,10 +20,7 @@
     <% else %>
       <p class="notice"><%= "Sign to have all the app features" %></p>
     <% end %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
-    <%= render 'components/footer' %>
   </body>
+  <%= render 'components/footer' %>
 </html>
