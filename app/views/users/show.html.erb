@@ -1,10 +1,11 @@
 <h1>Your Dashboard</h1>
 
 <div>
-  <%# <%= link_to 'Homepage', root_path, class:'btn btn-primary' %> 
+  <%# <%= link_to 'Homepage', root_path, class:'btn btn-primary' %>
 </div>
 
 <%= render '/components/description_user' %>
+<%= link_to "Update profile", edit_user_registration_path %>
 
 <div class="container  my-3">
   <h2>My bookings</h2>
