@@ -7,7 +7,8 @@ class BookingsController < ApplicationController
     @booked_days = booked_time/(24*60*60)
     @marker = [{
       lng: @flat.longitude,
-      lat: @flat.latitude
+      lat: @flat.latitude,
+      marker_html: render_to_string(partial: "marker")
     }]
   end
 
