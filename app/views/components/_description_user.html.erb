@@ -7,7 +7,7 @@
       <p>Email : <%= current_user.email %></p>
     </div>
     <div class="align-self-baseline">
-      <img src= "<%= current_user.photo.url %>" alt="User avatar" width="500" height="600" class="avatar-dashboard">
+      <%= cl_image_tag current_user.photo.key, width:500, height:600, class:"avatar-dashboard" %>
     </div>
   </div>
 </div>
