@@ -10,13 +10,12 @@ class FlatsController < ApplicationController
       @flats = Flat.search(params['query']).order("#{@orderby} #{@order}")
     else
       @flats = Flat.all.order("#{@orderby} #{@order}")
-
     end
-
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,
-        lng: flat.longitude
+        lng: flat.longitude,
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end
