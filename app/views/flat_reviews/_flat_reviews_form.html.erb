@@ -2,9 +2,7 @@
 
 <%= simple_form_for([@booking_id, @flat_review]) do |f| %>
   <%= f.input :comment %>
-
-  <%= f.input :rating, as: :hidden, input_html: { data: { target: 'rating' } } %>
-
+  <input type="hidden" name="flat_review[rating]" id="flat_review_rating" data-flat-review-stars-target="rating">
   <div class="my-3" >
     <% FlatReview::AUTHORIZED_RATINGS.each do |index| %>
       <i

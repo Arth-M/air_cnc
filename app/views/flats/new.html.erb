@@ -1,15 +1,42 @@
-<h1>Flats#new</h1>
-<p>Find me in app/views/flats/new.html.erb</p>
+<div class="container">
+  <div class="inner-container shadow p-3">
+    <div class="form-container mb-5", data-controller="form">
+      <h2>Create your new flat</h2>
+      <%= simple_form_for @flat do |f| %>
+      <div class="form-inputs">
+          <div class="row justify-content-around w-75">
+            <%= f.input :name%>
+          </div>
+          <div class="row justify-content-around w-75">
+          <%= f.input :description, :input_html => {:style=> 'height: 96px'} %>
+          </div>
+          <div class="row justify-content-around w-75">
+            <%= f.input :street, label: "Number and street of your appartment" %>
+          </div>
 
+          <div class="row justify-content-around w-75">
+            <div class="col-5">
+            <%= f.input :zipcode %>
+            </div>
+            <div class="col-5">
+            <%= f.input :city %>
+            </div>
+          </div>
 
-<%= simple_form_for @flat do |f| %>
-  <%= f.input :name %>
-  <%= f.input :street %>
-  <%= f.input :zipcode %>
-  <%= f.input :city %>
-  <%= f.input :full_address %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit, class: "btn btn-primary"%>
-<% end %>
+          <div class="row justify-content-around w-75">
+            <div class="col-5">
+            <%= f.input :price %>
+            </div>
+            <div class="col-5">
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+            </div>
+          </div>
+            <%= f.button :submit, class: "btn-flat"%>
+      </div>
+      <% end %>
+    </div>
+    <div class="d-flex justify-content-between border-top mb-1">
+        <%= link_to "Back", :back, class: "btn-flat align-self-end" %>
+    </div>
+  </div>
+</div>

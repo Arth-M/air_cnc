@@ -1,0 +1,20 @@
+<%# uikit.lewagon.com/documentation#card_product %>
+    <% @bookings.each do |booking| %>
+      <div class="card-flat">
+        <div class="one-card">
+          <%= cl_image_tag Flat.find(booking.flat_id).photos[0].key, :style => "height: 120px" %>
+          <div class="card-product-infos p-1">
+            <h2><%= Flat.find(booking.flat_id).name %></h2>
+            <p>Booking from :<%= booking.start_date %> to: <%= booking.end_date %></p>
+            <% if FlatReview.find_by(booking_id: booking.id) != nil %>
+              <p class="mb-2">Review : <%= FlatReview.find_by(booking_id: booking.id).comment %></p>
+              <% FlatReview::AUTHORIZED_RATINGS.each do |number| %>
+                <i class="fa<%= (number > FlatReview.find_by(booking_id: booking.id).rating) ? 'r' : 's' %> fa-star"></i>
+              <% end %>
+            <% else %>
+              <%= link_to 'Review', new_booking_flat_review_path(booking), class: "btn-flat", style: "position:absolute"%>
+            <% end %>
+          </div>
+        </div>
+       </div>
+    <% end %>

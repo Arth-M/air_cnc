@@ -40,6 +40,7 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(params_flat)
     @flat.user_id = current_user.id
+    @flat.full_address = "#{@flat.street}, #{@flat.zipcode} #{@flat.city}"
     if @flat.save
       redirect_to flat_path(@flat)
     else

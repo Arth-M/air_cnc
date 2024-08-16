@@ -1,0 +1,44 @@
+.avatar-dashboard {
+  border-radius: 50%;
+  box-shadow: 0 1px 15px rgba(0,0,0,0.2);
+  // border: rgb(233, 253, 115) 1px solid;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+.user-info-container {
+  width: 100%;
+  margin: 8px 8px 8px 0px ;
+}
+
+.inner-container {
+  margin-top: 88px;
+  margin-bottom: 80px;
+  border-radius: 10px;
+  padding-top:4px;
+  background-color: white;
+}
+
+#user-info {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.info-container {
+  display: flex;
+  flex: 2;
+}
+
+.update-position {
+  align-self: center;
+  text-align: center;
+}
+
+.form-container {
+  width: 75%;
+  margin-bottom: 24px;
+  padding: 16px;
+  text-align: left;
+  margin: 0px auto;
+}
