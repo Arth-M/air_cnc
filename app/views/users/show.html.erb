@@ -25,7 +25,10 @@
       </div>
 
       <div class="col-5" id="flats">
-        <h2 style="margin-bottom: 8px;">My flats</h2>
+        <div class="d-flex justify-content-between">
+          <h2 style="margin-bottom: 8px;">My flats</h2>
+          <%= link_to 'Add a flat', new_flat_path, class: "btn-flat" %>
+        </div>
         <div class="mt-3">
           <%# si (il a un booking ET que j'ai laissé une review) OU (il n'a pas de booking) %>
           <%= render '/components/card_flat_horizontal', partial: @flats %>
