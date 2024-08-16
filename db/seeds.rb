@@ -460,21 +460,27 @@ random = rand(1..10)
 random_flat = flats[random]
 booking1 = Booking.create(
   flat_id: random_flat.id,
-  user_id: random_flat.user_id
+  user_id: random_flat.user_id,
+  start_date: '10/02/2024',
+  end_date: '14/02/2024'
 )
 
 random = rand(1..10)
 random_flat = flats[random]
 booking2 = Booking.create!(
   flat_id: random_flat.id,
-  user_id: random_flat.user_id
+  user_id: random_flat.user_id,
+   start_date: '04/06/2024',
+  end_date: '29/06/2024'
 )
 
 random = rand(1..10)
 random_flat = flats[random]
 booking3 = Booking.create!(
   flat_id: random_flat.id,
-  user_id: random_flat.user_id
+  user_id: random_flat.user_id,
+   start_date: '20/05/2024',
+  end_date: '30/05/2024'
 )
 puts 'created bookings'
 
@@ -483,7 +489,7 @@ FlatReview.create!(
   comment: Faker::Quote.famous_last_words,
   rating: rand(1..5),
   booking_id: booking1.id,
-  flat_id: 1
+  flat_id: 1,
 )
 puts 'created flat_reviews'
 
