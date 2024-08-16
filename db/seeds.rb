@@ -508,21 +508,26 @@ puts 'created flat_reviews'
 
 puts 'creating user_reviews'
 UserReview.create!(
-  comment: Faker::Quote.famous_last_words,
+  comment: "The apartment is very well located with an amazing view. However, the street noise can be bothersome at night.",
   rating: rand(1..5),
   user_id: user1.id
 )
+
 UserReview.create!(
-  comment: Faker::Quote.famous_last_words,
+  comment: "The apartment is spacious and well-lit, but cleanliness was lacking when we arrived.",
   rating: rand(1..5),
   user_id: user2.id
 )
+
 UserReview.create!(
-  comment: Faker::Quote.famous_last_words,
+  comment: "Pleasant stay. The host was responsive and helpful. The apartment matched the photos well.",
   rating: rand(1..5),
   user_id: user2.id
 )
+
 puts 'user_reviews created'
 
 
+puts '*' * 60
+puts '\n' * 3
 puts 'seeding DONE !! Happy demo ❤️'
