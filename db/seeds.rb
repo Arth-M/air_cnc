@@ -100,8 +100,8 @@ flat1.photos.attach(io: URI.open(uploaded_file2['url']), filename: "urban_jewel2
 flat1.save!
 
 file3 = URI.open("https://images.unsplash.com/photo-1499955085172-a104c9463ece?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
-flat1.photos.attach(io: URI.open(uploaded_file3['url']), filename: "urban_jewel3.webp", content_type: "image/webp")
+p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
+p flat1.photos.attach(io: URI.open(uploaded_file3['url']), filename: "urban_jewel3.webp", content_type: "image/webp")
 flat1.save!
 
 flat2 = Flat.new(
@@ -116,18 +116,18 @@ flat2 = Flat.new(
 )
 
 file1 = URI.open("https://plus.unsplash.com/premium_photo-1672252617539-878656f17efe?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
-flat2.photos.attach(io: URI.open(uploaded_file1['url']), filename: "central_loft1.webp", content_type: "image/webp")
+p uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
+p flat2.photos.attach(io: URI.open(uploaded_file1['url']), filename: "central_loft1.webp", content_type: "image/webp")
 flat2.save!
 
 file2 = URI.open("https://images.unsplash.com/photo-1502672023488-70e25813eb80?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
-flat2.photos.attach(io: URI.open(uploaded_file2['url']), filename: "central_loft2.webp", content_type: "image/webp")
+p uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
+p flat2.photos.attach(io: URI.open(uploaded_file2['url']), filename: "central_loft2.webp", content_type: "image/webp")
 flat2.save!
 
 file3 = URI.open("https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
-flat2.photos.attach(io: URI.open(uploaded_file3['url']), filename: "central_loft3.webp", content_type: "image/webp")
+p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
+p flat2.photos.attach(io: URI.open(uploaded_file3['url']), filename: "central_loft3.webp", content_type: "image/webp")
 flat2.save!
 
 flat3 = Flat.new(
@@ -142,13 +142,13 @@ flat3 = Flat.new(
 )
 
 file1 = URI.open("https://images.unsplash.com/photo-1501876725168-00c445821c9e?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
-flat3.photos.attach(io: URI.open(uploaded_file1['url']), filename: "cozy_nest1.webp", content_type: "image/webp")
+p uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
+p flat3.photos.attach(io: URI.open(uploaded_file1['url']), filename: "cozy_nest1.webp", content_type: "image/webp")
 flat3.save!
 
 file2 = URI.open("https://plus.unsplash.com/premium_photo-1680281937008-f9b19ed9afb6?q=80&w=3413&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
-flat3.photos.attach(io: URI.open(uploaded_file2['url']), filename: "cozy_nest2.webp", content_type: "image/webp")
+p uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
+p flat3.photos.attach(io: URI.open(uploaded_file2['url']), filename: "cozy_nest2.webp", content_type: "image/webp")
 flat3.save!
 
 flat4 = Flat.new(
@@ -163,18 +163,18 @@ flat4 = Flat.new(
 )
 
 file1 = URI.open("https://images.unsplash.com/photo-1556020685-ae41abfc9365?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
-flat4.photos.attach(io: URI.open(uploaded_file1['url']), filename: "panoramic_apartment1.webp", content_type: "image/webp")
+p uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
+p flat4.photos.attach(io: URI.open(uploaded_file1['url']), filename: "panoramic_apartment1.webp", content_type: "image/webp")
 flat4.save!
 
 file2 = URI.open("https://images.unsplash.com/photo-1571598301081-36702bef5e81?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
-flat4.photos.attach(io: URI.open(uploaded_file2['url']), filename: "panoramic_apartment2.webp", content_type: "image/webp")
+p uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
+p flat4.photos.attach(io: URI.open(uploaded_file2['url']), filename: "panoramic_apartment2.webp", content_type: "image/webp")
 flat4.save!
 
 file3 = URI.open("https://images.unsplash.com/photo-1499916078039-922301b0eb9b?q=80&w=2585&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
-flat4.photos.attach(io: URI.open(uploaded_file3['url']), filename: "panoramic_apartment3.webp", content_type: "image/webp")
+p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
+p flat4.photos.attach(io: URI.open(uploaded_file3['url']), filename: "panoramic_apartment3.webp", content_type: "image/webp")
 flat4.save!
 
 flat5 = Flat.new(
@@ -189,18 +189,18 @@ flat5 = Flat.new(
 )
 
 file1 = URI.open("https://plus.unsplash.com/premium_photo-1683769251695-963095b23d67?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
-flat5.photos.attach(io: URI.open(uploaded_file1['url']), filename: "urban_retreat1.webp", content_type: "image/webp")
+p uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
+p flat5.photos.attach(io: URI.open(uploaded_file1['url']), filename: "urban_retreat1.webp", content_type: "image/webp")
 flat5.save!
 
 file2 = URI.open("https://images.unsplash.com/photo-1496180727794-817822f65950?q=80&w=2200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
-flat5.photos.attach(io: URI.open(uploaded_file2['url']), filename: "urban_retreat2.webp", content_type: "image/webp")
+p uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
+p flat5.photos.attach(io: URI.open(uploaded_file2['url']), filename: "urban_retreat2.webp", content_type: "image/webp")
 flat5.save!
 
 file3 = URI.open("https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
-flat5.photos.attach(io: URI.open(uploaded_file3['url']), filename: "urban_retreat3.webp", content_type: "image/webp")
+p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
+p flat5.photos.attach(io: URI.open(uploaded_file3['url']), filename: "urban_retreat3.webp", content_type: "image/webp")
 flat5.save!
 
 flat6 = Flat.new(
@@ -215,18 +215,18 @@ flat6 = Flat.new(
 )
 
 file1 = URI.open("https://images.unsplash.com/photo-1528914137830-c85ee162f588?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
-flat6.photos.attach(io: URI.open(uploaded_file1['url']), filename: "bright_studio1.webp", content_type: "image/webp")
+p uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
+p flat6.photos.attach(io: URI.open(uploaded_file1['url']), filename: "bright_studio1.webp", content_type: "image/webp")
 flat6.save!
 
 file2 = URI.open("https://images.unsplash.com/photo-1527772482340-7895c3f2b3f7?q=80&w=3351&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
-flat6.photos.attach(io: URI.open(uploaded_file2['url']), filename: "bright_studio2.webp", content_type: "image/webp")
+p uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
+p flat6.photos.attach(io: URI.open(uploaded_file2['url']), filename: "bright_studio2.webp", content_type: "image/webp")
 flat6.save!
 
 file3 = URI.open("https://images.unsplash.com/photo-1460408037948-b89a5e837b41?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
-flat6.photos.attach(io: URI.open(uploaded_file3['url']), filename: "bright_studio3.webp", content_type: "image/webp")
+p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
+p flat6.photos.attach(io: URI.open(uploaded_file3['url']), filename: "bright_studio3.webp", content_type: "image/webp")
 flat6.save!
 
 flat7 = Flat.new(
@@ -241,13 +241,13 @@ flat7 = Flat.new(
 )
 
 file1 = URI.open("https://plus.unsplash.com/premium_photo-1683769252575-e986af039184?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
-flat7.photos.attach(io: URI.open(uploaded_file1['url']), filename: "sunny_apartment1.webp", content_type: "image/webp")
+p uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
+p flat7.photos.attach(io: URI.open(uploaded_file1['url']), filename: "sunny_apartment1.webp", content_type: "image/webp")
 flat7.save!
 
 file3 = URI.open("https://images.unsplash.com/photo-1531835551805-16d864c8d311?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
-flat7.photos.attach(io: URI.open(uploaded_file3['url']), filename: "sunny_apartment3.webp", content_type: "image/webp")
+p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
+p flat7.photos.attach(io: URI.open(uploaded_file3['url']), filename: "sunny_apartment3.webp", content_type: "image/webp")
 flat7.save!
 
 flat8 = Flat.new(
@@ -262,13 +262,13 @@ flat8 = Flat.new(
 )
 
 file1 = URI.open("https://images.unsplash.com/photo-1484961361402-1ee9b1c7accb?q=80&w=2322&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
-flat8.photos.attach(io: URI.open(uploaded_file1['url']), filename: "elegant_suite1.webp", content_type: "image/webp")
+p uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
+p flat8.photos.attach(io: URI.open(uploaded_file1['url']), filename: "elegant_suite1.webp", content_type: "image/webp")
 flat8.save!
 
 file2 = URI.open("https://plus.unsplash.com/premium_photo-1676657954662-5362098c46c8?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
-flat8.photos.attach(io: URI.open(uploaded_file2['url']), filename: "elegant_suite2.webp", content_type: "image/webp")
+p uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
+p flat8.photos.attach(io: URI.open(uploaded_file2['url']), filename: "elegant_suite2.webp", content_type: "image/webp")
 flat8.save!
 
 flat9 = Flat.new(
@@ -283,35 +283,35 @@ flat9 = Flat.new(
 )
 
 file = URI.open("https://images.unsplash.com/photo-1529408632839-a54952c491e5?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file = Cloudinary::Uploader.upload(file.path, transformation: [{fetch_format: "webp"}])
-flat9.photos.attach(io: URI.open(uploaded_file['url']), filename: "modern_hideaway1.webp", content_type: "image/webp")
+p uploaded_file = Cloudinary::Uploader.upload(file.path, transformation: [{fetch_format: "webp"}])
+p flat9.photos.attach(io: URI.open(uploaded_file['url']), filename: "modern_hideaway1.webp", content_type: "image/webp")
 flat9.save!
 
 file3 = URI.open("https://images.unsplash.com/photo-1494458453337-e9062e968178?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
-flat9.photos.attach(io: URI.open(uploaded_file3['url']), filename: "modern_hideaway3.webp", content_type: "image/webp")
+p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
+p flat9.photos.attach(io: URI.open(uploaded_file3['url']), filename: "modern_hideaway3.webp", content_type: "image/webp")
 flat9.save!
 
-flat10 = Flat.new(
-  name: "Hidden Terrace",
-  city: "Paris",
-  zipcode: "75009",
-  street: "19 Rue des Martyrs",
-  full_address: "19 Rue des Martyrs, 75009 Paris",
-  description: "Modern apartment offering a unique view of the urban tracks.",
-  price: 115,
-  user_id: user2.id
-)
+# flat10 = Flat.new(
+#   name: "Hidden Terrace",
+#   city: "Paris",
+#   zipcode: "75009",
+#   street: "19 Rue des Martyrs",
+#   full_address: "19 Rue des Martyrs, 75009 Paris",
+#   description: "Modern apartment offering a unique view of the urban tracks.",
+#   price: 115,
+#   user_id: user2.id
+# )
 
-file1 = URI.open("https://images.unsplash.com/photo-1494281232141-90a40b0b06c9?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
-flat10.photos.attach(io: URI.open(uploaded_file1['url']), filename: "hidden_terrace1.webp", content_type: "image/webp")
-flat10.save!
+# file1 = URI.open("https://images.unsplash.com/photo-1494281232141-90a40b0b06c9?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+# p uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
+# p flat10.photos.attach(io: URI.open(uploaded_file1['url']), filename: "hidden_terrace1.webp", content_type: "image/webp")
+# flat10.save!
 
-file2 = URI.open("https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
-flat10.photos.attach(io: URI.open(uploaded_file2['url']), filename: "hidden_terrace2.webp", content_type: "image/webp")
-flat10.save!
+# file2 = URI.open("https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+# uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
+# flat10.photos.attach(io: URI.open(uploaded_file2['url']), filename: "hidden_terrace2.webp", content_type: "image/webp")
+# flat10.save!
 
 puts 'flats created'
 
