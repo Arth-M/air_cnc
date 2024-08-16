@@ -525,9 +525,8 @@ UserReview.create!(
   user_id: user2.id
 )
 
+puts "\n"
 puts 'user_reviews created'
-
-
 puts '*' * 60
-puts '\n' * 3
+puts "\n" * 2
 puts 'seeding DONE !! Happy demo ❤️'
