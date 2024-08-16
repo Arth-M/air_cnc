@@ -34,7 +34,7 @@ file = URI.open("https://www.utopix.com/fr/blog/wp-content/uploads/2024/04/Y2E4O
 uploaded_file = Cloudinary::Uploader.upload(file.path, transformation: [{fetch_format: "webp"}])
 user1.photo.attach(io: URI.open(uploaded_file['url']), filename: "profilhomme1.webp", content_type: "image/webp")
 user1.save!
-
+puts 'User 1 done'
 user2 = User.new(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
@@ -67,11 +67,12 @@ file1 = URI.open("https://cherry.img.pmdstatic.net/fit/https.3A.2F.2Fimg.2Esport
 p uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
 p flat0.photos.attach(io: URI.open(uploaded_file1['url']), filename: "volley1.webp", content_type: "image/webp")
 flat0.save!
-
 file2 = URI.open("https://www.shutterstock.com/image-photo/beautiful-young-woman-stands-her-600nw-1456719599.jpg")
 p uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
 p flat0.photos.attach(io: URI.open(uploaded_file2['url']), filename: "volley2.webp", content_type: "image/webp")
 flat0.save!
+
+puts 'Flat 1 done'
 
 file3 = URI.open("https://averagejoes.co.uk/wp-content/uploads/2012/07/teamgb_beach_volley-ball_girls.jpg")
 p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
@@ -104,6 +105,8 @@ p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fet
 p flat1.photos.attach(io: URI.open(uploaded_file3['url']), filename: "urban_jewel3.webp", content_type: "image/webp")
 flat1.save!
 
+puts 'Flat 2 done'
+
 flat2 = Flat.new(
   name: "Central Loft",
   city: "Paris",
@@ -130,6 +133,8 @@ p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fet
 p flat2.photos.attach(io: URI.open(uploaded_file3['url']), filename: "central_loft3.webp", content_type: "image/webp")
 flat2.save!
 
+puts 'Flat 3 done'
+
 flat3 = Flat.new(
   name: "Cozy Nest",
   city: "Bordeaux",
@@ -150,6 +155,8 @@ file2 = URI.open("https://plus.unsplash.com/premium_photo-1680281937008-f9b19ed9
 p uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
 p flat3.photos.attach(io: URI.open(uploaded_file2['url']), filename: "cozy_nest2.webp", content_type: "image/webp")
 flat3.save!
+
+puts 'Flat 4 done'
 
 flat4 = Flat.new(
   name: "Panoramic Apartment",
@@ -177,6 +184,8 @@ p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fet
 p flat4.photos.attach(io: URI.open(uploaded_file3['url']), filename: "panoramic_apartment3.webp", content_type: "image/webp")
 flat4.save!
 
+puts 'Flat 5 done'
+
 flat5 = Flat.new(
   name: "Urban Retreat",
   city: "Lyon",
@@ -202,6 +211,8 @@ file3 = URI.open("https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q
 p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
 p flat5.photos.attach(io: URI.open(uploaded_file3['url']), filename: "urban_retreat3.webp", content_type: "image/webp")
 flat5.save!
+
+puts 'Flat 6 done'
 
 flat6 = Flat.new(
   name: "Bright Studio",
@@ -229,6 +240,8 @@ p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fet
 p flat6.photos.attach(io: URI.open(uploaded_file3['url']), filename: "bright_studio3.webp", content_type: "image/webp")
 flat6.save!
 
+puts 'Flat 7 done'
+
 flat7 = Flat.new(
   name: "Sunny Apartment",
   city: "Strasbourg",
@@ -250,6 +263,8 @@ p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fet
 p flat7.photos.attach(io: URI.open(uploaded_file3['url']), filename: "sunny_apartment3.webp", content_type: "image/webp")
 flat7.save!
 
+puts 'Flat 8 done'
+
 flat8 = Flat.new(
   name: "Elegant Suite",
   city: "Toulouse",
@@ -270,6 +285,8 @@ file2 = URI.open("https://plus.unsplash.com/premium_photo-1676657954662-5362098c
 p uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
 p flat8.photos.attach(io: URI.open(uploaded_file2['url']), filename: "elegant_suite2.webp", content_type: "image/webp")
 flat8.save!
+
+puts 'Flat 9 done'
 
 flat9 = Flat.new(
   name: "Modern Hideaway",
