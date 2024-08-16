@@ -21,7 +21,7 @@ export default class extends Controller {
   }
 
   updateRatingForm(rating) {
-    this.rating.value = rating;
+    flat_review_rating.value = rating;
   }
 
   selectRating(event) {

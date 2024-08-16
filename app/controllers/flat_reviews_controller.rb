@@ -6,12 +6,14 @@ class FlatReviewsController < ApplicationController
   end
 
   def create
+
     @flat_review = FlatReview.new(flat_review_params)
     @booking_id = Booking.find(params[:booking_id])
     @flat_review.booking_id = @booking_id.id
-
+    @flat_review.flat_id = @booking_id.flat_id
     if @flat_review.save!
       average_calculation
+
       redirect_to user_path(current_user)
     else
       render :new, status: :unprocessable_entity
