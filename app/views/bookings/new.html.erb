@@ -10,7 +10,7 @@
             <%#= f.input :end_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-end"} } %>
             <%= f.input :start_date, as: :string, :label => "Dates", input_html: { data: { controller: "booking-date-both", target: "booking-date-both.entryDate" } } %>
             </div>
-            <% f.input :end_date, as: :string, as: :hidden %>
+            <%= f.input :end_date, as: :string, as: :hidden %>
             </div>
             <%# <%= f.input :payment_amount %>
             <%# <%= f.input :flat_id %>
