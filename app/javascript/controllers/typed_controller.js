@@ -4,9 +4,9 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
     var typed = new Typed('#typed', {
-      strings: ['AirCnc', 'Fin the best for you'],
+      strings: ['AirCnc', 'Find the best for you', 'Batch Toulouse #1738'],
       typeSpeed: 50,
-      loop: false,
+      loop: true,
     loopCount: Infinity
     });
   }
