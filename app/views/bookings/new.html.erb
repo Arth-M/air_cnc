@@ -1,18 +1,16 @@
 <div class="container">
-  <div class="inner-container shadow p-3">
-    <div class="form-container mb-5", data-controller="form">
-      <h1>Your booking</h1>
+  <div id="booking-form" class="inner-container shadow p-3">
+    <div class="form-container mb-5 text-center", data-controller="form">
+      <h1 class="another-gradient">Your booking</h1>
         <%= simple_form_for @booking, url: flat_bookings_path do |f| %>
         <div class="form-inputs">
-          <div class="row justify-content-around w-75">
+          <div class="row justify-content-center w-100">
             <div class="col-5">
             <%#= f.input :start_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-start"} } %>
             <%#= f.input :end_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-end"} } %>
-            <%= f.input :start_date, as: :string, input_html: { data: { controller: "booking-date-both", target: "booking-date-both.entryDate" } } %>
+            <%= f.input :start_date, as: :string, :label => "Dates", input_html: { data: { controller: "booking-date-both", target: "booking-date-both.entryDate" } } %>
             </div>
-            <div class="col-5">
-            <%= f.input :end_date, as: :string %>
-            </div>
+            <% f.input :end_date, as: :string, as: :hidden %>
             </div>
             <%# <%= f.input :payment_amount %>
             <%# <%= f.input :flat_id %>
