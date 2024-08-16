@@ -1,0 +1,10 @@
+.card-img-top {
+  height: 160px;
+  object-fit: cover
+}
+
+#gradient {
+  background: linear-gradient(to right, $main, $secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
