@@ -1,2 +1,11 @@
-<h1>Ajouter un nouvel avis :</h1>
-<%= render "flat_reviews_form", partial: @flat_review %>
+<div class="container">
+  <div class="inner-container shadow p-3">
+    <div class="form-container mb-5", data-controller="form">
+      <h1>Send your review</h1>
+      <%= render "flat_reviews_form", partial: @flat_review %>
+    </div>
+    <div class="d-flex justify-content-between border-top mb-1">
+        <%= link_to "Back", :back, class: "btn-flat align-self-end" %>
+    </div>
+  </div>
+</div>
