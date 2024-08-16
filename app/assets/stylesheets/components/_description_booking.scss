@@ -1,0 +1,50 @@
+.booking-details {
+  display: grid;
+  grid-template-columns: repeat(2, 4fr);
+  gap: 30px;
+  grid-auto-rows: minmax(70px, auto);
+  margin: 30px;
+  height: 400px;
+}
+
+.description-booking {
+  overflow: hidden;
+  height: 400px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display:flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.bill {
+  overflow: hidden;
+  height: 190px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display:flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+}
+
+.congrats {
+  box-shadow: inset 0px 0px 20px 20px #F4F4F4;
+  width: 100% ;
+  left: 0%;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("https://storage.googleapis.com/glide-prod.appspot.com/uploads-v2/9eu1P0fXDpI9SXega1Co/pub/FchC0tKtCj8zaqyKbas4.gif");
+  object-fit: cover ;
+  }
+
+#mapping {
+  height: auto;
+  width: 100%;
+}
