@@ -12,7 +12,7 @@
                 <i class="fa<%= (number > FlatReview.find_by(booking_id: booking.id).rating) ? 'r' : 's' %> fa-star"></i>
               <% end %>
             <% else %>
-              <%= link_to 'Review', new_booking_flat_review_path(booking), class: "btn-flat", style: "position:absolute"%>
+              <%= link_to 'Review', new_booking_flat_review_path(booking), class: "btn btn-flat", style: "position:absolute"%>
             <% end %>
           </div>
         </div>

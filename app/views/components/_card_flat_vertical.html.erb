@@ -1,14 +1,15 @@
 <%# https://getbootstrap.com/docs/5.3/components/card/ %>
 
-<%#= link_to flat_path(flat) do %>
   <div class="card shadow bg-white" style="border_radius: $border-radius">
+    <%= link_to flat_path(flat) do %>
     <% if flat.photos[0].nil? %>
-      <img class="card-img-top" src="https://raw.githubusercontent.com/Arth-M/air_cnc/master/public/logo.png" alt="Flat image">
+        <img class="card-img-top" src="https://raw.githubusercontent.com/Arth-M/air_cnc/master/public/logo.png" alt="Flat image">
     <% else %>
       <img class="card-img-top" src="<%= flat.photos.first.url %>" alt="Flat image">
     <% end %>
     <div class="card-body p-3">
       <h3 id="gradient" class="card-title"><%= flat.name %></h3>
+    <% end %>
       <p class="font-italic"><%= flat.city %></p>
         <% if flat.description.length > 67 %>
           <p class="card-text" ><%= flat.description[0,64] %>...</p>
@@ -19,5 +20,4 @@
       <h6 class="text-end px-3"><%= flat.price %> <strong>€</strong></h6>
       <%= link_to 'Show', flat_path(flat), class: "btn btn-flat btn-block" %>
   </div>
-<%# end %>
 <%# <a href="#" class="card-link">Show me this appartment!</a> %>
