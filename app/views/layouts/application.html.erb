@@ -24,5 +24,7 @@
     <%# end %>
     <%= yield %>
   </body>
+  <% if params['controller'] != "devise/sessions" %>
   <%= render 'components/footer' %>
+  <% end %>
 </html>
