@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="inner-container shadow p-3">
   <div class="row bg-white p-3">
     <div class="col">
       <h2><%= @flat.name %></h2>
@@ -35,6 +36,9 @@
     <% end %>
   </div>
 </div>
-  <%= link_to "Back to list", flats_path, class: 'btn btn-flat m-3' %>
+  <div class="d-flex justify-content-between border-top mb-1">
+        <%= link_to "Back", flats_path, class: "btn-flat align-self-end" %>
+    </div>
+</div>
 </div>
 </div>

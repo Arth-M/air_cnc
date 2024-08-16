@@ -1,16 +1,29 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
-
-<div>
-<%= simple_form_for @booking, url: flat_bookings_path do |f| %>
-  <%#= f.input :start_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-start"} } %>
-  <%#= f.input :end_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-end"} } %>
-  <%= f.input :start_date, as: :string, input_html: { data: { controller: "booking-date-both", target: "booking-date-both.entryDate" } } %>
-  <%= f.input :end_date, as: :string %>
-  <%# <%= f.input :payment_amount %>
-  <%# <%= f.input :flat_id %>
-  <%# <%= f.input :user_id %>
-  <%# <%= f.input :flat_review_id %>
-  <%= f.button :submit, class: "btn btn-primary"%>
-<% end %>
+<div class="container">
+  <div class="inner-container shadow p-3">
+    <div class="form-container mb-5", data-controller="form">
+      <h1>Your booking</h1>
+        <%= simple_form_for @booking, url: flat_bookings_path do |f| %>
+        <div class="form-inputs">
+          <div class="row justify-content-around w-75">
+            <div class="col-5">
+            <%#= f.input :start_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-start"} } %>
+            <%#= f.input :end_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-end"} } %>
+            <%= f.input :start_date, as: :string, input_html: { data: { controller: "booking-date-both", target: "booking-date-both.entryDate" } } %>
+            </div>
+            <div class="col-5">
+            <%= f.input :end_date, as: :string %>
+            </div>
+            </div>
+            <%# <%= f.input :payment_amount %>
+            <%# <%= f.input :flat_id %>
+            <%# <%= f.input :user_id %>
+            <%# <%= f.input :flat_review_id %>
+            <%= f.button :submit, class: "btn-flat"%>
+            </div>
+          <% end %>
+          </div>
+      <div class="d-flex justify-content-between border-top mb-1">
+        <%= link_to "Back", :back, class: "btn-flat align-self-end" %>
+      </div>
+  </div>
 </div>
