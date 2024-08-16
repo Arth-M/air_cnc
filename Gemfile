@@ -83,4 +83,4 @@ gem "devise"
 gem 'cloudinary'
 gem "pg_search"
 gem "geocoder"
-gem 'uglifier', '>= 1.3.0'
+gem 'terser'

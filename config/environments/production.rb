@@ -32,7 +32,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Minifier JS add by (boobycodiepie)
-  config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = :terser
   # Minifier css add by (boobycodiepie)
   config.assets.css_compressor = :sass
 
