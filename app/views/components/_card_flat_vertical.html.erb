@@ -3,7 +3,7 @@
 
 <div class="card shadow p-3 bg-white" style="border_radius: $border-radius">
   <div class="card-body">
-    <h5 class="card-title text-center"><%= flat.name %></h5>
+    <h3 id='gradient' class="card-title text-center"><%= flat.name %></h3>
       <% if flat.description.length > 67 %>
         <p class="card-text" ><%= flat.description[0,64] %>...</p>
       <% else %>
