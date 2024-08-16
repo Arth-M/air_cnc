@@ -1,9 +1,29 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
-
-  <p>Congrats <%= current_user %>, you booked <%= @flat.name %></p>
-  <p>Booking from <%= @booking.start_date %> to <%= @booking.end_date %> : <%= @booked_days.round %> days </p><br>
-  <p>Your bill: <%= @booked_days.round %> x <%= @flat.price.round %> = <%= @booking.payment_amount.round %></p>
-
-
-  <%= link_to "Back to list", flats_path, class: 'btn btn-primary' %><br>
+<div class="container">
+  <div class="inner-container">
+  <div class="text-center congrats" target="_blank">
+    <h1>🎉 Congrats <%= current_user.first_name %> 🎉</h1>
+    <h3>you booked <%= @flat.name %> !</h3>
+  </div>
+    <div class="d-block carousel-img">
+      <%= render partial: 'components/carousel', locals: { photos: @flat.photos } %>
+    </div>
+  <div class="booking-details">
+    <div class="description-booking">
+      <p>Your stay will be from <b><%= @booking.start_date.strftime('%A %d %B %Y') %></b></p>
+      <p>to <b><%= @booking.end_date.strftime('%A %d %B %Y') %></b>.</p>
+      <p>So you will have <%= @booked_days.round %> days to enjoy !</p>
+      <div class="bill">
+        <p>Your bill is : </p>
+        <p><%= @booked_days.round %> days x <%= @flat.price.round %> €/per night</p>
+        <p> = <%= @booking.payment_amount.round %>€</p>
+      </div>
+    </div>
+    <div id="mapping"
+      data-controller="mapping"
+      data-mapping-markers-value="<%= @marker.to_json %>"
+      data-mapping-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+  <%= link_to "Back to list", flats_path, class: 'btn-flat' %>
+  </div>
+</div>
