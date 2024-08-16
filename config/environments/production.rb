@@ -15,6 +15,8 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
+  # add gzip for ensure the compression maximum (add by boobycodiepie)
+  config.middleware.use Rack::Deflater
 
   # Ensures that a master key has been made available in ENV["RAILS_MASTER_KEY"], config/master.key, or an environment
   # key such as config/credentials/production.key. This key is used to decrypt credentials (and other encrypted files).
@@ -28,6 +30,14 @@ Rails.application.configure do
 
   # Do not fall back to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
+
+  # Minifier JS add by (boobycodiepie)
+  config.assets.js_compressor = :uglifier
+  # Minifier css add by (boobycodiepie)
+  config.assets.css_compressor = :sass
+
+  # Add the cache on the headers http add by (boobycodiepie)
+  config.action_dispatch.rack_cache = true
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
