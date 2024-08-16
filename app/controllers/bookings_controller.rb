@@ -1,10 +1,14 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show]
   def show
-    @booking=Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
     @flat = Flat.find(@booking.flat_id)
     booked_time =  @booking.end_date.to_time-@booking.start_date.to_time
     @booked_days = booked_time/(24*60*60)
+    @marker = [{
+      lng: @flat.longitude,
+      lat: @flat.latitude
+    }]
   end
 
   def new
