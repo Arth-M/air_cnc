@@ -1,11 +1,12 @@
 <h1>Bookings#new</h1>
 <p>Find me in app/views/bookings/new.html.erb</p>
 
-<div data-controller="datepicker">
+<div>
 <%= simple_form_for @booking, url: flat_bookings_path do |f| %>
-<p data-datepicker-target="test"></p>
-  <%= f.input :start_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-start"} } %>
-  <%= f.input :end_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-end"} } %>
+  <%#= f.input :start_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-start"} } %>
+  <%#= f.input :end_date, as: :string, :input_html => { :class => 'date', data: {controller: "booking-date-end"} } %>
+  <%= f.input :start_date, as: :string, input_html: { data: { controller: "booking-date-both", target: "booking-date-both.entryDate" } } %>
+  <%= f.input :end_date, as: :string %>
   <%# <%= f.input :payment_amount %>
   <%# <%= f.input :flat_id %>
   <%# <%= f.input :user_id %>
