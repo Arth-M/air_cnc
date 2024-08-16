@@ -25,6 +25,9 @@
     <%= yield %>
   </body>
   <% if params['controller'] != "devise/sessions" %>
-  <%= render 'components/footer' %>
+    <% if params['controller'] != "bookings" %>
+      <%= render 'components/footer' %>
+    <% end %>
   <% end %>
+
 </html>
