@@ -12,11 +12,11 @@ require 'faker'
 require 'open-uri'
 
 puts 'destroy db tables'
+User.destroy_all
 UserReview.destroy_all
 FlatReview.destroy_all
-Booking.destroy_all
-User.destroy_all
 Flat.destroy_all
+Booking.destroy_all
 
 
 require 'cloudinary'
@@ -291,27 +291,6 @@ file3 = URI.open("https://images.unsplash.com/photo-1494458453337-e9062e968178?q
 p uploaded_file3 = Cloudinary::Uploader.upload(file3.path, transformation: [{fetch_format: "webp"}])
 p flat9.photos.attach(io: URI.open(uploaded_file3['url']), filename: "modern_hideaway3.webp", content_type: "image/webp")
 flat9.save!
-
-# flat10 = Flat.new(
-#   name: "Hidden Terrace",
-#   city: "Paris",
-#   zipcode: "75009",
-#   street: "19 Rue des Martyrs",
-#   full_address: "19 Rue des Martyrs, 75009 Paris",
-#   description: "Modern apartment offering a unique view of the urban tracks.",
-#   price: 115,
-#   user_id: user2.id
-# )
-
-# file1 = URI.open("https://images.unsplash.com/photo-1494281232141-90a40b0b06c9?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-# p uploaded_file1 = Cloudinary::Uploader.upload(file1.path, transformation: [{fetch_format: "webp"}])
-# p flat10.photos.attach(io: URI.open(uploaded_file1['url']), filename: "hidden_terrace1.webp", content_type: "image/webp")
-# flat10.save!
-
-# file2 = URI.open("https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-# uploaded_file2 = Cloudinary::Uploader.upload(file2.path, transformation: [{fetch_format: "webp"}])
-# flat10.photos.attach(io: URI.open(uploaded_file2['url']), filename: "hidden_terrace2.webp", content_type: "image/webp")
-# flat10.save!
 
 puts 'flats created'
 
