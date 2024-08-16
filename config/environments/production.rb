@@ -31,6 +31,14 @@ Rails.application.configure do
   # Do not fall back to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
+  # Minifier JS add by (boobycodiepie)
+  config.assets.js_compressor = :uglifier
+  # Minifier css add by (boobycodiepie)
+  config.assets.css_compressor = :sass
+
+  # Add the cache on the headers http add by (boobycodiepie)
+  config.action_dispatch.rack_cache = true
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
