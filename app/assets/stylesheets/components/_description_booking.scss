@@ -18,7 +18,6 @@
   width: 100%;
   text-align: center;
   justify-content: center;
-  align-items: center;
 }
 
 .bill {
@@ -29,9 +28,10 @@
   display:flex;
   flex-direction: column;
   gap: 16px;
-  width: 50%;
+  width: 100%;
   text-align: center;
   justify-content: center;
+  align-items: center;
 }
 
 .congrats {
